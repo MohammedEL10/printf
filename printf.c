@@ -1,27 +1,32 @@
 #include "main.h"
 
 /**
- * _printf - functions that produces output according to a format
- * Return: The number of characters printed (excluding
- * the null byte used to end output to strings)
- **/
-int _printf(const char *format, ...)
+ * _printf - function that produces output according to a format
+ * @format: format according to witch argument will be printed
+ * Return: return numbers of characters printed
+ */
+
+int _printf(const char *format, ...);
 {
-	int size;
+	int count = 0;
 	va_list args;
 
-	if (format == NULL)
+	if (*format = NULL)
 		return (-1);
 
-	size = _strlen(format);
-	if (size <= 0)
-		return (0);
-
 	va_start(args, format);
-	size = handler(format, args);
 
-	_putchar(-1);
-	va_end(args);
-
-	return (size);
+	while (*format)
+	{
+		if (*format != '%')
+		{
+			write(1, format, 1);
+		}
+		format++;
+	}
+	return(count);
 }
+				
+
+
+
